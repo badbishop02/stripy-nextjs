@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { checkout } from '../checkout';
 
 export default function Home() {
   return (
@@ -21,6 +22,19 @@ export default function Home() {
             <img src="https://imgs.search.brave.com/4s4GlHujvxtujLFmHuJuwKPrSHiOZbnCOAV98NxKhdQ/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5a/WVAwbFFSY053Nzha/LV9CMXZWckRBSGFI/YSZwaWQ9QXBp" />
             <p>Lion NFT</p>
           </a>
+          <button 
+          onClick={(() => {
+            checkout({
+              lineItems: [
+                {
+                  price: "price_1LJ1AXBsAIA2CICPvAhL2FVI",
+                  quantity: 1,
+                }
+              ]
+            })
+          })} 
+          >Buy!
+          </button>
          </div>
          <a className={styles.card}>
             <h2>Documentation &rarr;</h2>
